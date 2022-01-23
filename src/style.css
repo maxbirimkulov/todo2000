@@ -1,0 +1,420 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar__list-color{
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.sidebar__add-form-colors{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 10px 0;
+
+}
+
+.sidebar__add-form-circle{
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 50%;
+
+}
+.sidebar__add-form-circle.active{
+    border: 2px solid black;
+    opacity: 100%;
+}
+
+.sidebar__add{
+    width: 100%;
+}
+
+.sidebar__all, .sidebar__add-btn, .sidebar__list-item{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 40px;
+    column-gap: 9px;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: .5s;
+}
+
+.sidebar__all .folder__list-delete, .sidebar__add-btn .folder__list-delete, .sidebar__list-item .folder__list-delete {
+    font-size: 0;
+}
+.sidebar__all span, .sidebar__add-btn span, .sidebar__list-item span {
+    font-size: 22px;
+}
+
+.sidebar__all:hover, .sidebar__add-btn:hover, .sidebar__list-item:hover {
+    background-color: white;
+    transition: .5s;
+}
+
+.sidebar__all:hover .folder__list-delete, .sidebar__add-btn:hover .folder__list-delete, .sidebar__list-item:hover .folder__list-delete{
+    font-size: 15px;
+    padding-right: 5px;
+    z-index: 10;
+}
+
+.sidebar{
+    width: 20%;
+    height: 100%;
+    background-color:  #F1F1F1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 60px 20px 0;
+
+
+
+}
+
+.sidebar__add-form-close{
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    transform: translate(50%,-50%);
+    cursor: pointer;
+}
+
+.sidebar__add-form-input{
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    border-radius: 4px;
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.15px;
+    color: #C7C7C7;
+    padding-left: 11px;
+    height: 32px;
+    margin-bottom: 10px;
+}
+
+.sidebar__add-form{
+    display: none;
+    width: 235px;
+    height: 148px;
+    background: #FFFFFF;
+    padding: 18px;
+    z-index: 10;
+    position: relative;
+
+}
+
+.sidebar__add-form-btn{
+    width: 100%;
+    height: 37px;
+    background: #4DD599;
+    border-radius: 4px;
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+section{
+    width: 80%;
+    padding: 56px 80px 0 57px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vanta{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+    color: black;
+}
+.zeroTask{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 33px;
+}
+
+.folder__deleteDone{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+    font-size: 22px;
+
+}
+
+.folder__deleteDone:hover{
+     color: red;
+ }
+
+.folder__list-no{
+    color: red;
+    font-size: 20px;
+}
+
+.folder__title-input{
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 39px;
+    outline: none;
+    color: black;
+    max-width: 240px;
+
+}
+
+.folder__title-input::placeholder{
+    font-size: 15px;
+}
+
+.folder__title-block{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 52px;
+
+}
+
+.folder__title-block::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -20px;
+    left: 0;
+    background-color: black;
+}
+
+.folder__title{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: black;
+}
+
+.folder__title-change{
+    cursor: pointer;
+    transition: .4s;
+
+}
+.folder__title-change:hover{
+    color: black;
+    transition: .4s;
+}
+.folder__form{
+
+
+
+}
+
+.folder__form-input{
+    margin-bottom: 16px;
+    width: 415px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.15px;
+    color: #C7C7C7;
+    border-radius: 4px;
+    padding-left: 14px;
+
+}
+
+.folder__form-input::placeholder{
+    color: #C7C7C7;
+}
+
+.folder__form-add{
+    width: 145px;
+    height: 34px;
+    background: #4DD599;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+    margin-right: 9px;
+}
+
+
+.folder__form-cancel{
+    width: 90px;
+    height: 34px;
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #9C9C9C;
+    cursor: pointer;
+    border: none;
+}
+
+.folder{
+    position: relative;
+
+
+
+
+}
+
+.folder__list{
+
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    row-gap: 20px;
+    margin: 25px 0;
+    position: relative;
+
+}
+
+
+.folder__list-circle{
+     width: 20px;
+     height: 20px;
+     border: 2px solid #E8E8E8;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+
+.folder__list-delete{
+     position: absolute;
+     right: 0;
+     cursor: pointer;
+     color: #B4B4B4;
+     transition: .5s;
+
+}
+
+.folder__list-delete:hover{
+     color: red;
+     transition: .5s;
+ }
+.folder__list-item{
+    font-family: Lato,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+
+}
+
+.folder__list-item.active .folder__list-item-text {
+    text-decoration: line-through;
+}
+
+.folder__list-item.active  .folder__list-circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4DD599;
+    color: white;
+    font-size: 12px;
+}
+
+.folder__list-item.active  .folder__list-circle::before{
+    content: '✔';
+}
+
+
+@media (max-width: 992px) {
+    .sidebar{
+        width: 30%;
+    }
+    section{
+        width: 70%;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar{
+        padding: 60px 10px 0;
+    }
+    section{
+        padding: 56px 50px 0 30px;
+    }
+    .sidebar__all span{
+        font-size: 18px;
+    }
+    .sidebar{
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    section{
+        padding: 42px 20px 0 15px;
+    }
+    .sidebar{
+        row-gap: 20px;
+    }
+    .folder__title {
+        font-size: 26px;
+    }
+    .folder__deleteDone {
+        font-size: 19px;
+    }
+    .sidebar{
+        width: 40%;
+    }
+    section{
+        width: 60%;
+    }
+}
